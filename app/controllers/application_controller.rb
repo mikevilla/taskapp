@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    # Cache the current user by putting it in an instance variable.
-    @current_user = User.find session[:user_id] if session[:user_id]
+    # Cache the current user by putting it in an instance variable, find the user with :user_id in User table
+    # if it does not yet currently exist otherwise just return the already defined instance variable of @current_user.
+    @current_user ||= User.find session[:user_id] if session[:user_id]
   end
 
   # Create a helper method by making the current user data accessible to all views.
