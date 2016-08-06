@@ -19,7 +19,5 @@ production:
   timeout: 5000
   reconnect: true
   encoding: utf8
-  port: 3306
   host: mike-mysql-instance.cgdpccbrtykr.us-west-2.rds.amazonaws.com
-  socket: /tmp/mysql.sock
-
+  port: 3306
