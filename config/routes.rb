@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   resources :users
+  resources :sessions
+
   get 'welcome_page/welcome'
   root 'welcome_page#welcome'
 
