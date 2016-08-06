@@ -9,15 +9,3 @@ development:
   host: mike-mysql-instance.cgdpccbrtykr.us-west-2.rds.amazonaws.com
   port: 3306
   socket: /tmp/mysql.sock
-
-
-production:
-  adapter: mysql2
-  database: taskmanager
-  username: mvilla
-  password: "&mvilla88"
-  timeout: 5000
-  reconnect: true
-  encoding: utf8
-  host: mike-mysql-instance.cgdpccbrtykr.us-west-2.rds.amazonaws.com
-  port: 3306
