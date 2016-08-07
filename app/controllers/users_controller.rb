@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
       # Set the sessions :user_id to the newly created user.
       session[:user_id] = @user.id
-      redirect_to root_url, notice: "Welcome to the Task App!"
+      redirect_to tasks_path, notice: "Welcome to the Task App!"
     else
       render "new"
     end
