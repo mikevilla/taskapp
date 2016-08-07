@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+
+      # Set the sessions :user_id to the newly created user.
+      session[:user_id] = @user.id
       redirect_to root_url, notice: "Welcome to the Task App!"
     else
       render "new"
