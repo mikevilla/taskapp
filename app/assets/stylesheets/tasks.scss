@@ -114,3 +114,26 @@ textarea#task_description {
 .booking-info .awe-select-wrapper.target select {
   width: 32%;
 }
+
+.booking-info .form-submit .save-task div {
+    width: 100%;
+    font-size: 13px;
+    color: #FCF2E5;
+    background-color: #FF6666;
+    border: 0;
+    cursor: pointer;
+    line-height: 46px;
+    height: 46px;
+    padding: 0 26px;
+    border-radius: 0 0 5px 5px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.simple-button {
+  color: #FFF;
+  margin-left: 45%;
+}
