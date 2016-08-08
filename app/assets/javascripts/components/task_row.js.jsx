@@ -14,17 +14,22 @@ var TaskRowComponent = React.createClass ({
       console.log('render TaskComponent');
       console.log(this.props.taskRow);
 
+      var editUrl = "/tasks/" + this.props.taskRow.id + "/edit";
+
       return (
         <li>
-           <a href="#">
                <i className="awe-icon awe-icon-check"></i>
-               <i className="awe-icon awe-icon-arrow-right"></i>
-               <span className="task-title">{this.props.taskRow.title}</span>
-               <span>{this.props.taskRow.description}</span>
-               <span>{this.props.taskRow.priority}</span>
-               <span>{this.props.taskRow.status}</span>
-               <span>{this.props.taskRow.target}</span>
-           </a>
+               <div>
+                 <a href={editUrl}>
+
+                   <i className="awe-icon awe-icon-arrow-right"></i>
+                   <span className="task-title">{this.props.taskRow.title}</span>
+                   <span>{this.props.taskRow.description}</span>
+                   <span>{this.props.taskRow.priority}</span>
+                   <span>{this.props.taskRow.status}</span>
+                   <span>{this.props.taskRow.target}</span>
+                 </a>
+               </div>
         </li>
       );
   }
