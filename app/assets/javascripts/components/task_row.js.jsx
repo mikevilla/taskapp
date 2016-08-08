@@ -15,16 +15,17 @@ var TaskRowComponent = React.createClass ({
       console.log(this.props.taskRow);
 
       return (
-        <div className="taskContainer">
-          <hr/>
-          <div>
-            <div>Title: {this.props.taskRow.title}</div>
-            <div>Description: {this.props.taskRow.description}</div>
-            <div>Priority: {this.props.taskRow.priority}</div>
-            <div>Status: {this.props.taskRow.status}</div>
-            <div>Target: {this.props.taskRow.target}</div>
-          </div>
-        </div>
+        <li>
+           <a href="#">
+               <i className="awe-icon awe-icon-check"></i>
+               <i className="awe-icon awe-icon-arrow-right"></i>
+               <span className="task-title">{this.props.taskRow.title}</span>
+               <span>{this.props.taskRow.description}</span>
+               <span>{this.props.taskRow.priority}</span>
+               <span>{this.props.taskRow.status}</span>
+               <span>{this.props.taskRow.target}</span>
+           </a>
+        </li>
       );
   }
 });

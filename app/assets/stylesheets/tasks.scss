@@ -1,3 +1,36 @@
 // Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.task-app {
+
+  .awe-services__list li span.task-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+  }
+  .awe-services__list li a:hover {
+      color: #fff;
+      background-color: #fff;
+  }
+
+  #user_header {
+    float: right;
+    position: inherit;
+    z-index: 1;
+  }
+
+  #header-page .logo + .search-box {
+      right: 0;
+  }
+}
+
+.login-status {
+  margin: 5px 10px 0 0;
+}
+
+.log-out {
+  float: right;
+}
+

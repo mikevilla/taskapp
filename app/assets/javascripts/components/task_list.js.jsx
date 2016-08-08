@@ -19,11 +19,20 @@ var TaskListComponent = React.createClass ({
     );
 
     return (
-      <div className="">
-        <ul className="">
-        {rows}
-        </ul>
-      </div>
+        <section className="sale-flights-section-demo">
+          <div className="container">
+              <div className="row">
+                  <div className="">
+                      <div className="awe-services">
+                          <h2>Date</h2>
+                          <ul className="awe-services__list">
+                            {rows}
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
     );
   }
 

@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     # has secure password provides a call that checks to see if the password matches
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tasks_path, notice: "Welcome!"
+      redirect_to tasks_path
     else
       flash.now.alert = "Email or password is invalid."
       render "new"
@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Logged out."
+    redirect_to root_url
   end
 
 end
