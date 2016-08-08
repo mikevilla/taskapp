@@ -49,7 +49,7 @@
                       <label>Priority</label>
                       <div class="form-item">
                           <div class="awe-select-wrapper">
-                            <%= select_tag(:priority, options_for_select([['High', 1], ['Medium', 2], ['Low', 3]], @task.priority)) %>
+                            <%= f.select(:priority, options_for_select([['High', 1], ['Medium', 2], ['Low', 3]], @task.priority)) %>
                             <i class="fa fa-caret-down"></i></div>
                       </div>
                       <span>Set Task Importance</span>
@@ -58,18 +58,18 @@
                       <label>Status</label>
                       <div class="form-item">
                           <div class="awe-select-wrapper">
-                            <%= select_tag(:status, options_for_select([['In Progress', 'In Progress'], ['Completed', 'Completed']], @task.status)) %>
+                            <%= f.select(:status, options_for_select([['In Progress', 'In Progress'], ['Completed', 'Completed']], @task.status)) %>
                             <i class="fa fa-caret-down"></i></div>
                       </div>
                       <span>Set the Status of the Task</span>
                   </div>
               </div>
-            <%= hidden_field_tag :user_id, @task.user_id %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
               <div class="form-submit">
                   <div class="add-to-cart">
                       <button type="submit">
                         <div class="actions create-task">
-                          <%= f.submit "Create New Task" %>
+                          <%= f.submit "Create New Task Test" %>
                         </div>
                       </button>
                   </div>
