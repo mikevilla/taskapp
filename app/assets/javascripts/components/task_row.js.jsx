@@ -37,7 +37,7 @@ var TaskRowComponent = React.createClass ({
 
       var status = this.props.taskRow.status.toLowerCase().replace(/ /g, ''),
         editUrl = "/tasks/" + this.props.taskRow.id + "/edit",
-        statusClass = "awe-icon awe-icon-check " + status + "_" + this.props.taskRow.id ;
+        statusClass = "checkmark awe-icon awe-icon-check " + status + "_" + this.props.taskRow.id ;
 
       return (
         <li>

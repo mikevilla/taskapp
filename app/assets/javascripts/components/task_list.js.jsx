@@ -19,7 +19,7 @@ var TaskListComponent = React.createClass ({
     );
 
     return (
-        <section className="sale-flights-section-demo">
+        <section className="main-task-container">
           <div className="container">
               <div className="row">
                   <div className="">
