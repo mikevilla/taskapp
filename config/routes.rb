@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   # setup api for app
   namespace :api do
     get 'tasks' => 'tasks#index'
+    post 'tasks/update_task' => 'tasks#update_task'
   end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

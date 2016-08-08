@@ -13,18 +13,46 @@ var TaskRowComponent = React.createClass ({
       // Event handlers, for now using jquery but later will move over to handle the event with reactjs. This is just a demo.
       $( ".completed_" + propsTaskID ).click(function() {
         var taskId = $(this).attr('data-id');
-        console.log('One clicked', taskId);
+         console.log('One clicked', taskId);
 
-        // send request to update this task as In Progress
-
+         // send request to update this task as Completed
+         var apiTaskCompletedUrl = '/api/tasks/update_task.json';
+         $.ajax({
+           url: apiTaskCompletedUrl,
+           beforeSend:function (xhr) {
+             xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+           },
+           type:"POST",
+           data: {id:taskId, status:'In Progress'},
+           success:function(data) {
+             console.log('SUCCESS TASK apiTaskCompletedUrl: ', data);
+           }.bind(this),
+           error: function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+           }.bind(this)
+         });
       });
 
       $( ".inprogress_" + propsTaskID).click(function() {
         var taskId = $(this).attr('data-id');
         console.log('One clicked', taskId);
 
-       // send request to update this task as Completed
-
+        // send request to update this task as Completed
+        var apiTaskCompletedUrl = '/api/tasks/update_task.json';
+        $.ajax({
+          url: apiTaskCompletedUrl,
+          beforeSend:function (xhr) {
+            xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+          },
+          type:"POST",
+          data: {id:taskId, status:'Completed'},
+          success:function(data) {
+            console.log('SUCCESS TASK apiTaskCompletedUrl: ', data);
+          }.bind(this),
+          error: function(xhr, status, err) {
+           console.error(this.props.url, status, err.toString());
+          }.bind(this)
+        });
 
       });
 
