@@ -93,3 +93,20 @@
   }
 }
 
+/* Customize form */
+.booking-info .form-submit .add-to-cart button,
+.booking-info .form-submit .add-to-cart {
+    width: 100%;
+}
+
+textarea#task_description {
+  width: 100%
+}
+
+.booking-info .create-task input {
+    background-color: #FF6666;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    border: none;
+}
