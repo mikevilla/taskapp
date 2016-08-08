@@ -137,3 +137,8 @@ textarea#task_description {
   color: #FFF;
   margin-left: 45%;
 }
+
+.inprogress,
+.completed {
+  cursor: pointer;
+}
