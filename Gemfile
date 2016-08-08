@@ -5,6 +5,8 @@ gem 'puma'
 gem 'mysql2'
 gem 'thin'
 gem 'protected_attributes' # refactor later and use strong params instead
+gem 'react-rails', '~> 1.6'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.2'

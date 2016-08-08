@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'welcome_page/welcome'
   root 'welcome_page#welcome'
 
+  # setup api for app
+  namespace :api do
+    get 'tasks' => 'tasks#index'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
