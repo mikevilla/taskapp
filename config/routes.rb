@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   get 'welcome_page/welcome'
-  root 'welcome_page#welcome'
+  root 'tasks#index'
 
   # setup api for app
   namespace :api do
