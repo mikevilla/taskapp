@@ -23,6 +23,8 @@ $(function() {
 
   console.log("Here: MIKE", apiTaskUrl);
 
+
+
   // Initial call to populate the task data
   $.ajax({
     url: apiTaskUrl,
@@ -32,6 +34,24 @@ $(function() {
       console.log('SUCCESS TASK taskData: ', data);
       console.log('getInitialState TaskComponent');
 
+      // Sort the array
+      switch(status) {
+          case "Completed":
+              data.sort(function(a,b){
+                return new Date(b.priority) - new Date(a.priority);
+              });
+              break;
+          case "In Progress":
+              data.sort(function(a,b){
+                return new Date(a.target) - new Date(b.target);
+              });
+              break;
+          default:
+            data.sort(function(a,b){
+              return new Date(b.priority) - new Date(a.priority);
+            });
+            break;
+      }
       // Data retrieved successfully so start rendering the TaskContainerComponent
       ReactDOM.render(
         <TaskContainerComponent url={apiTaskUrl} taskData={data}/>,
