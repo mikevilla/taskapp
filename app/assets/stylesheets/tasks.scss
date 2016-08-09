@@ -79,6 +79,12 @@
   padding: 5px;
 }
 
+.sort-container {
+  display:block;
+  padding: 5px;
+  float: right;
+}
+
 .in-progress-icon img,
 .add-task-icon img,
 .completed-icon img {
@@ -186,16 +192,16 @@ textarea#task_description {
 }
 
 .task-description {
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .priority, .status, .target-date {
   display: inline-block;
-  width: 92px;
+  width: 83px;
 }
 
 .awe-services__list li span.task-data-spec {
-  font-size: 16px;
+  font-size: 15px;
   color: #000;
 }
 
@@ -217,4 +223,31 @@ textarea#task_description {
     margin-left: 20px;
   }
 
+}
+
+
+.button-priority, .button-date {
+  cursor: pointer;
+}
+
+.button-all {
+  visibility: hidden;
+}
+
+.top-sort-bar {
+  margin-top: 56px;
+}
+
+.nav-action-label {
+  float: right;
+  font-size: 1.5rem;
+  color: #1E1E1F;
+}
+
+
+.priority-icon img,
+.calendar-icon img {
+    display: block;
+    height: 50px;
+    float: right;
 }
