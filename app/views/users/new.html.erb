@@ -1,5 +1,3 @@
-<h1>Task App: Sign Up</h1>
-
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">
@@ -12,20 +10,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br/>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br/>
-    <%= f.password_field :password_confirmation %>
-  </div>
-
-  <div class="actions"><%= f.submit %></div>
+  <section class="login-page-demo">
+      <div class="awe-overlay"></div>
+      <div class="container">
+          <div class="login-register-page__content">
+              <div class="content-title">
+                  <span>Please Register</span>
+                  <h2>Task App</h2>
+              </div>
+              <form>
+                  <div class="form-item">
+                    <%= f.label :email %><br/>
+                    <%= f.text_field :email %>
+                  </div>
+                  <div class="form-item">
+                    <%= f.label :password %><br/>
+                    <%= f.password_field :password %>
+                  </div>
+                  <div class="form-item">
+                    <%= f.label :password_confirmation %><br/>
+                    <%= f.password_field :password_confirmation %>
+                  </div>
+                  <div class="form-actions">
+                    <div class="login-page actions"><%= f.submit %></div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </section>
 <% end %>

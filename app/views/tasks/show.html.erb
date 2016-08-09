@@ -40,7 +40,7 @@
                       <div class="awe-select-wrapper target">
                         <div class="field">
                           <%= f.label :target_date %><br>
-                          <%= f.date_select :target %>
+                          <%= f.text_field :target, :class => 'datepicker', :size => 10, :maxlength => 10 %>
                         </div>
                       </div>
                       <span>Set Target date to complete this Task</span>
@@ -83,3 +83,15 @@
 </div>
 
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+  $(".redirectCompleted").click(function() {
+    window.location.replace("/completed");
+  });
+
+  $(".redirectInProgress").click(function() {
+    window.location.replace("/inprogress");
+  });
+
+  $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
+</script>

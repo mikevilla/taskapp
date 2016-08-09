@@ -1,17 +1,33 @@
-<h1>Log In</h1>
-
 <!--  not dealing with model so using a form_tag, sessions path will trigger create action -->
 
 <%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %><br/>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
 
-  <div class="field">
-    <%= label_tag :password %><br/>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Log In" %></div>
-
+<section class="login-page-demo">
+    <div class="awe-overlay"></div>
+    <div class="container">
+        <div class="login-register-page__content">
+            <div class="content-title">
+                <span>Welcome back!</span>
+                <h2>Task App</h2>
+            </div>
+            <form>
+                <div class="form-item">
+                  <%= label_tag :email %><br/>
+                  <%= text_field_tag :email, params[:email] %>
+                </div>
+                <div class="form-item">
+                  <%= label_tag :password %><br/>
+                  <%= password_field_tag :password %>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password</a>
+                <div class="form-actions">
+                  <div class="login-page actions"><%= submit_tag "Log In" %></div>
+                </div>
+            </form>
+            <div class="login-register-link">
+                Dont have account yet? <a href="/signup">Register</a>
+            </div>
+        </div>
+    </div>
+</section>
 <% end %>
