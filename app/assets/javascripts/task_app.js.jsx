@@ -5,7 +5,8 @@ $(function() {
   var apiTaskListUrl = '/api/tasks.json',
     apiInProgressTaskListUrl = '/api/inprogress.json',
     apiCompletedTaskListUrl = '/api/completed.json',
-    apiTaskUrl = "";
+    apiTaskUrl = "",
+    sortBy = 'date';
 
   switch(status) {
       case "Completed":
@@ -21,47 +22,8 @@ $(function() {
         apiTaskUrl = "";
   }
 
-  console.log("Here: MIKE", apiTaskUrl);
-
-
-
   // Initial call to populate the task data
-  $.ajax({
-    url: apiTaskUrl,
-    dataType: 'json',
-    cache: false,
-    success: function(data) {
-      console.log('SUCCESS TASK taskData: ', data);
-      console.log('getInitialState TaskComponent');
-
-      // Sort the array
-      switch(status) {
-          case "Completed":
-              data.sort(function(a,b){
-                return new Date(b.priority) - new Date(a.priority);
-              });
-              break;
-          case "In Progress":
-              data.sort(function(a,b){
-                return new Date(a.target) - new Date(b.target);
-              });
-              break;
-          default:
-            data.sort(function(a,b){
-              return new Date(b.priority) - new Date(a.priority);
-            });
-            break;
-      }
-      // Data retrieved successfully so start rendering the TaskContainerComponent
-      ReactDOM.render(
-        <TaskContainerComponent url={apiTaskUrl} taskData={data}/>,
-        document.getElementById('mountTaskListComponent')
-      );
-    }.bind(this),
-    error: function(xhr, status, err) {
-     console.error(this.props.url, status, err.toString());
-    }.bind(this)
-  });
+  refreshData(sortBy);
 
   $(".redirectCompleted").click(function() {
     window.location.replace("/completed");
@@ -70,6 +32,63 @@ $(function() {
   $(".redirectInProgress").click(function() {
     window.location.replace("/inprogress");
   });
+
+  $(".mikeTest").click(function() {
+    console.log('testing...');
+  });
+
+  $('.button-priority').click(function() {
+    console.log('button-priority clicked');
+    sortBy = 'priority';
+    $('.button-priority').addClass('selected');
+    $('.button-date').removeClass('selected');
+    $('.taskContainerComponent').remove();
+    refreshData(sortBy);
+  });
+
+  $('.button-date').click(function() {
+    console.log('button-date clicked');
+    sortBy = 'date';
+    $('.button-date').addClass('selected');
+    $('.button-priority').removeClass('selected');
+    $('.taskContainerComponent').remove();
+    refreshData(sortBy);
+  });
+
+  function refreshData (sortBy) {
+    $.ajax({
+      url: apiTaskUrl,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+
+        // Sort the array
+        switch(sortBy) {
+            case "priority":
+                data.sort(function(a, b){return a.priority-b.priority});
+                break;
+            case "date":
+                data.sort(function(a,b){
+                  return new Date(a.target) - new Date(b.target);
+                });
+                break;
+            default:
+              data.sort(function(a,b){
+                return new Date(a.priority) - new Date(b.priority);
+              });
+              break;
+        }
+        // Data retrieved successfully so start rendering the TaskContainerComponent
+        ReactDOM.render(
+          <TaskContainerComponent url={apiTaskUrl} taskData={data}/>,
+          document.getElementById('mountTaskListComponent')
+        );
+      }.bind(this),
+      error: function(xhr, status, err) {
+       console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  };
 
 });
 

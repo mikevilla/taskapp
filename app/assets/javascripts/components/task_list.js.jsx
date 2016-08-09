@@ -24,10 +24,6 @@ var TaskListComponent = React.createClass ({
               <div className="row">
                   <div className="">
                       <div className="awe-services">
-                          <div className="top-nav-container">
-                            <div className="col-xs-5 top-nav">Priority</div>
-                            <div className="col-xs-5 top-nav">Date</div>
-                          </div>
                           <ul className="awe-services__list">
                             {rows}
                           </ul>
