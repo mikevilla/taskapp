@@ -15,7 +15,7 @@
           <div class="container">
               <!-- LOGO -->
               <div class="logo">
-                  <a href="index.html"><%= image_tag "logo.png" %></a>
+                  <a href="/inprogress"><%= image_tag "logo.png" %></a>
               </div>
               <!-- END / LOGO -->
 
@@ -63,10 +63,10 @@
 
 
   <div class="row fixed-navbar-group">
-    <div class="col-xs-4 fixed-navbar-item">
+    <div class="col-xs-4 fixed-navbar-item redirectInProgress">
       <div class="navbar-container">
         <div class="in-progress-icon">
-          <a href="index.html"><%= image_tag "in_progress2.png" %></a>
+          <%= image_tag "in_progress2.png" %>
         </div>
         <div class="nav-label">In Progress</div>
       </div>
@@ -81,15 +81,13 @@
         </div>
       </a>
     </div>
-    <div class="col-xs-4 fixed-navbar-item">
-      <a href="">
+    <div class="col-xs-4 fixed-navbar-item redirectCompleted">
       <div class="navbar-container">
         <div class="completed-icon">
           <%= image_tag "completed.png" %>
         </div>
         <div class="nav-label">Completed</div>
       </div>
-      </a>
     </div>
   </div>
 
@@ -134,7 +132,7 @@
               <!-- WIDGET -->
               <div class="col-md-2">
                   <div class="widget widget_categories">
-                      <h3>Categiries</h3>
+                      <h3>Categories</h3>
                       <ul>
                           <li><a href="#">Countries</a></li>
                           <li><a href="#">Regions</a></li>

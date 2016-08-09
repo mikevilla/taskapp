@@ -1,6 +1,82 @@
-<h1>Editing Task</h1>
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<div class="container" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
+
+  <div class="theiaStickySidebar" style="padding-top: 1px; padding-bottom: 1px; position: static;"><div class="detail-sidebar">
+          <div class="booking-info">
+              <h3>Edit Task</h3>
+              <div class="form-select-date">
+                  <div class="form-item">
+                      <div class="field">
+                        <%= f.label :title %><br>
+                        <%= f.text_field :title %>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-textarea-wrapper">
+                  <div class="form-item">
+                      <div class="field">
+                        <%= f.label :description %><br>
+                        <%= f.text_area :description, :class => 'task-app' %>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-select-date">
+                  <div class="form-item">
+                      <div class="awe-select-wrapper target">
+                        <div class="field">
+                          <%= f.label :target_date %><br>
+                          <%= f.date_select :target %>
+                        </div>
+                      </div>
+                      <span>Set Target date to complete this Task</span>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="form-elements form-adult">
+                      <label>Priority</label>
+                      <div class="form-item">
+                          <div class="awe-select-wrapper">
+                            <%= f.select(:priority, options_for_select([['High', 1], ['Medium', 2], ['Low', 3]], @task.priority)) %>
+                            <i class="fa fa-caret-down"></i></div>
+                      </div>
+                      <span>Set Task Importance</span>
+                  </div>
+                  <div class="form-elements form-kids">
+                      <label>Status</label>
+                      <div class="form-item">
+                          <div class="awe-select-wrapper">
+                            <%= f.select(:status, options_for_select([['In Progress', 'In Progress'], ['Completed', 'Completed']], @task.status)) %>
+                            <i class="fa fa-caret-down"></i></div>
+                      </div>
+                      <span>Set the Status of the Task</span>
+                  </div>
+              </div>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+              <div class="form-submit">
+                  <div class="add-to-cart">
+                      <button type="submit">
+                        <div class="actions create-task">
+                          <%= f.submit "Save" %>
+                        </div>
+                      </button>
+                  </div>
+              </div>
+          </div>
+
+      </div
+  ></div>
+</div>
+
+<% end %>

@@ -8,6 +8,14 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks
   end
 
+  def completed
+    @tasks = current_user.tasks.where(status: 'Completed')
+  end
+
+  def inprogress
+    @tasks = current_user.tasks.where(status: 'In Progress')
+  end
+
   # GET /tasks/1
   # GET /tasks/1.json
   def show

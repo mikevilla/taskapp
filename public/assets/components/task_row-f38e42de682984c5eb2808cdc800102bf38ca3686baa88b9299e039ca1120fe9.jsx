@@ -75,16 +75,11 @@ var TaskRowComponent = React.createClass ({
                <div>
                  <a href={editUrl}>
                    <i className="awe-icon awe-icon-arrow-right"></i>
-                   <div className="task-name-details">
-                      <span className="task-title">{this.props.taskRow.title}</span>
-                      <span className="task-description">{this.props.taskRow.description}</span>
-                   </div>
-                   <div className="task-data-specs">
-                      <div className="priority"><span className="task-data-spec">Priority:</span> {this.props.taskRow.priority}</div>
-                      <div className="status"><span className="task-data-spec">Status:</span> {this.props.taskRow.status}</div>
-                      <div className="target-date"><span className="task-data-spec">Target Date:</span> {this.props.taskRow.target}</div>
-                   </div>
-
+                   <span className="task-title">{this.props.taskRow.title}</span>
+                   <span>{this.props.taskRow.description}</span>
+                   <span>{this.props.taskRow.priority}</span>
+                   <span>{this.props.taskRow.status}</span>
+                   <span>{this.props.taskRow.target}</span>
                  </a>
                </div>
         </li>

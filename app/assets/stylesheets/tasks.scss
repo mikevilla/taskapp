@@ -6,7 +6,7 @@
 .task-app {
 
   .awe-services__list li span.task-title {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: #000;
   }
@@ -45,6 +45,10 @@
   width: 33%;
 }
 
+.fixed-navbar-group {
+    width: 101%;
+}
+
 @media (max-width: 749px) {
   .fixed-navbar-group {
     position: fixed;
@@ -62,6 +66,11 @@
 
   .navbar-container .nav-label {
     display: none;
+  }
+
+  .awe-services__list li span.task-data-spec {
+    font-size: 12px;
+    color: #000;
   }
 }
 
@@ -93,3 +102,119 @@
   }
 }
 
+/* Customize form */
+.booking-info .form-submit .add-to-cart button,
+.booking-info .form-submit .add-to-cart {
+    width: 100%;
+}
+
+textarea#task_description {
+  width: 100%
+}
+
+.booking-info .create-task input {
+    background-color: #FF6666;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    border: none;
+}
+
+.booking-info .awe-select-wrapper.target select {
+  width: 32%;
+}
+
+.booking-info .form-submit .save-task div {
+  width: 100%;
+  font-size: 13px;
+  color: #FCF2E5;
+  background-color: #FF6666;
+  border: 0;
+  cursor: pointer;
+  line-height: 46px;
+  height: 46px;
+  padding: 0 26px;
+  border-radius: 0 0 5px 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.simple-button {
+  color: #FFF;
+  margin-left: 45%;
+}
+
+.checkmark {
+  cursor: pointer;
+}
+
+.main-task-container {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.redirectInProgress,
+.redirectCompleted {
+  cursor: pointer;
+}
+
+#flash_notice {
+  font-size: 18px;
+  color: #4fd64f;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.logo {
+ margin: 12px;
+}
+
+#header-page .container .logo img {
+  max-height: 5rem;
+}
+
+.task-name-details {
+  float: left;
+}
+
+.task-data-specs {
+  float: right;
+  margin-top: 15px;
+}
+
+.task-description {
+  max-width: 700px;
+}
+
+.priority, .status, .target-date {
+  display: inline-block;
+  width: 92px;
+}
+
+.awe-services__list li span.task-data-spec {
+  font-size: 16px;
+  color: #000;
+}
+
+.top-nav-container {
+  height: 50px;
+  width: auto;
+  margin-top: 50px;
+}
+
+.awe-services .top-nav {
+  background-color: #0091ea;
+  font-size: 33px;
+  color: #ffffff;
+  margin-top: 8px;
+  margin-left: 50px;
+  height: 48px;
+
+  @media (max-width: 749px) {
+    margin-left: 20px;
+  }
+
+}
