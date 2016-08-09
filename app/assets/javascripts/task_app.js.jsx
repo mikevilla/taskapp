@@ -33,10 +33,6 @@ $(function() {
     window.location.replace("/inprogress");
   });
 
-  $(".mikeTest").click(function() {
-    console.log('testing...');
-  });
-
   $('.button-priority').click(function() {
     console.log('button-priority clicked');
     sortBy = 'priority';
