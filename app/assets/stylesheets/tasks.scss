@@ -198,3 +198,23 @@ textarea#task_description {
   font-size: 16px;
   color: #000;
 }
+
+.top-nav-container {
+  height: 50px;
+  width: auto;
+  margin-top: 50px;
+}
+
+.awe-services .top-nav {
+  background-color: #0091ea;
+  font-size: 33px;
+  color: #ffffff;
+  margin-top: 8px;
+  margin-left: 50px;
+  height: 48px;
+
+  @media (max-width: 749px) {
+    margin-left: 20px;
+  }
+
+}
