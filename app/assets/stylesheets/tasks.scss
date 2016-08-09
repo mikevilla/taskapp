@@ -45,6 +45,10 @@
   width: 33%;
 }
 
+.fixed-navbar-group {
+    width: 101%;
+}
+
 @media (max-width: 749px) {
   .fixed-navbar-group {
     position: fixed;
