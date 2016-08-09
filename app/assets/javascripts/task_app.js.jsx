@@ -2,11 +2,30 @@
 $(function() {
   console.log( "ready!" );
 
-  var apiTaskListUrl = '/api/tasks.json';
+  var apiTaskListUrl = '/api/tasks.json',
+    apiInProgressTaskListUrl = '/api/inprogress.json',
+    apiCompletedTaskListUrl = '/api/completed.json',
+    apiTaskUrl = "";
+
+  switch(status) {
+      case "Completed":
+          apiTaskUrl = apiCompletedTaskListUrl;
+          break;
+      case "In Progress":
+          apiTaskUrl = apiInProgressTaskListUrl;
+          break;
+      case "All":
+        apiTaskUrl = apiTaskListUrl;
+        break;
+      default:
+        apiTaskUrl = "";
+  }
+
+  console.log("Here: MIKE", apiTaskUrl);
 
   // Initial call to populate the task data
   $.ajax({
-    url: apiTaskListUrl,
+    url: apiTaskUrl,
     dataType: 'json',
     cache: false,
     success: function(data) {
@@ -15,7 +34,7 @@ $(function() {
 
       // Data retrieved successfully so start rendering the TaskContainerComponent
       ReactDOM.render(
-        <TaskContainerComponent url={apiTaskListUrl} taskData={data}/>,
+        <TaskContainerComponent url={apiTaskUrl} taskData={data}/>,
         document.getElementById('mountTaskListComponent')
       );
     }.bind(this),
@@ -24,4 +43,14 @@ $(function() {
     }.bind(this)
   });
 
+  $(".redirectCompleted").click(function() {
+    window.location.replace("/completed");
+  });
+
+  $(".redirectInProgress").click(function() {
+    window.location.replace("/inprogress");
+  });
+
 });
+
+

@@ -6,6 +6,19 @@ class Api::TasksController < ApplicationController
     render json: tasks
   end
 
+  def completed
+    tasks = current_user.tasks.where(status: 'Completed')
+    render json: tasks
+  end
+
+
+  def inprogress
+    tasks = current_user.tasks.where(status: 'In Progress')
+    render json: tasks
+  end
+
+
+
   def update_task
     task_id = params[:id]
     task = Task.find task_id

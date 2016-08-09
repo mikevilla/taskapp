@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   resources :tasks
+
+  get 'completed' => 'tasks#completed'
+  get 'inprogress' => 'tasks#inprogress'
+
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
   # setup api for app
   namespace :api do
     get 'tasks' => 'tasks#index'
+    get 'inprogress' => 'tasks#inprogress'
+    get 'completed' => 'tasks#completed'
     post 'tasks/update_task' => 'tasks#update_task'
   end
 

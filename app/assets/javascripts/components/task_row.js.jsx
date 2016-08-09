@@ -26,6 +26,7 @@ var TaskRowComponent = React.createClass ({
            data: {id:taskId, status:'In Progress'},
            success:function(data) {
              console.log('SUCCESS TASK apiTaskCompletedUrl: ', data);
+             window.location.replace("/completed");
            }.bind(this),
            error: function(xhr, status, err) {
             console.error(this.props.url, status, err.toString());
@@ -48,6 +49,7 @@ var TaskRowComponent = React.createClass ({
           data: {id:taskId, status:'Completed'},
           success:function(data) {
             console.log('SUCCESS TASK apiTaskCompletedUrl: ', data);
+            window.location.replace("/inprogress");
           }.bind(this),
           error: function(xhr, status, err) {
            console.error(this.props.url, status, err.toString());
