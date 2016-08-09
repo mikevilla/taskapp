@@ -251,3 +251,35 @@ textarea#task_description {
     height: 50px;
     float: right;
 }
+
+.login-page input {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0091ea;
+    border: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    z-index: 9;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.form-item input {
+  width: 100%;
+}
+
+.login-register-page__content {
+    float: none !important;
+    margin: 0 auto !important;
+}
