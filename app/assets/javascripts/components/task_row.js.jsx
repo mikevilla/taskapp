@@ -82,8 +82,8 @@ var TaskRowComponent = React.createClass ({
                       <span className="task-description">{this.props.taskRow.description}</span>
                    </div>
                    <div className="task-data-specs">
-                      <div className="priority"><span className="task-data-spec">Priority:</span> <span className={priorityValue}>{this.props.taskRow.priority}</span></div>
                       <div className="status"><span className="task-data-spec">Status:</span><span className={statusValue}>{this.props.taskRow.status}</span></div>
+                      <div className="priority"><span className="task-data-spec">Priority:</span> <span className={priorityValue}>{this.props.taskRow.priority}</span></div>
                       <div className="target-date"><span className="task-data-spec">Target Date:</span><span className="targetValue">{this.props.taskRow.target}</span></div>
                    </div>
 
