@@ -67,7 +67,9 @@ var TaskRowComponent = React.createClass ({
 
       var status = this.props.taskRow.status.toLowerCase().replace(/ /g, ''),
         editUrl = "/tasks/" + this.props.taskRow.id + "/edit",
-        statusClass = "checkmark awe-icon awe-icon-check " + status + "_" + this.props.taskRow.id ;
+        statusClass = "checkmark awe-icon awe-icon-check " + status + "_" + this.props.taskRow.id,
+        priorityValue = "priority-value priority" + this.props.taskRow.priority,
+        statusValue = "statusValue " + this.props.taskRow.status;
 
       return (
         <li>
@@ -80,9 +82,9 @@ var TaskRowComponent = React.createClass ({
                       <span className="task-description">{this.props.taskRow.description}</span>
                    </div>
                    <div className="task-data-specs">
-                      <div className="priority"><span className="task-data-spec">Priority:</span> {this.props.taskRow.priority}</div>
-                      <div className="status"><span className="task-data-spec">Status:</span> {this.props.taskRow.status}</div>
-                      <div className="target-date"><span className="task-data-spec">Target Date:</span> {this.props.taskRow.target}</div>
+                      <div className="priority"><span className="task-data-spec">Priority:</span> <span className={priorityValue}>{this.props.taskRow.priority}</span></div>
+                      <div className="status"><span className="task-data-spec">Status:</span><span className={statusValue}>{this.props.taskRow.status}</span></div>
+                      <div className="target-date"><span className="task-data-spec">Target Date:</span><span className="targetValue">{this.props.taskRow.target}</span></div>
                    </div>
 
                  </a>

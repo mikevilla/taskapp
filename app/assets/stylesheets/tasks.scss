@@ -314,3 +314,40 @@ textarea#task_description {
   margin-top: 15px;
   position: relative;
 }
+
+.task-data-specs .priority-value {
+  font-size: 20px;
+  position: relative;
+  top: 1px;
+  left: 15px;
+
+  &.priority1 {
+    color: #ff2f2f;
+  }
+
+  &.priority2 {
+    color: #0091ea;
+  }
+
+  &.priority3 {
+    color: #46bf33;
+  }
+}
+
+.task-data-specs {
+  .statusValue.Completed {
+    font-size: 14px;
+    color: lightseagreen;
+  }
+
+  .statusValue.Progress {
+    font-size: 14px;
+    color: dodgerblue;
+  }
+
+  .targetValue {
+    font-size: 14px;
+    color: #111111;
+  }
+}
+
