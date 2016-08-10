@@ -10,10 +10,12 @@ class TasksController < ApplicationController
 
   def completed
     @tasks = current_user.tasks.where(status: 'Completed')
+    @page_title = "Completed"
   end
 
   def inprogress
     @tasks = current_user.tasks.where(status: 'In Progress')
+    @page_title = "In Progress"
   end
 
   # GET /tasks/1
@@ -24,10 +26,12 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @page_title = "Add Task"
   end
 
   # GET /tasks/1/edit
   def edit
+    @page_title = "Edit Task"
   end
 
   # POST /tasks
