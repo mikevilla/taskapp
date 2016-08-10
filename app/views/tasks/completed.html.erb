@@ -6,34 +6,24 @@
 
 <!-- Build out react task list. -->
 <div id="content-container" class="top-sort-bar">
-
-        <div class="row">
-          <div class="col-xs-3 fixed-navbar-item button-all">
-            <div class="navbar-container">
-              <div class="in-progress-icon">
-              </div>
-              <div class="nav-label">A B C</div>
-            </div>
-          </div>
-          <div class="col-xs-1">
-          </div>
-          <div class="col-xs-7">
-            <div class="sort-container button-date">
-              <div class="calendar-icon">
-                <div class="nav-action-label">Date</div>
-                <%= image_tag "calendar.png" %>
-              </div>
-            </div>
-            <div class="sort-container button-priority">
-              <div class="priority-icon">
-                <div class="nav-action-label">Priority</div>
-                <%= image_tag "priority.png" %>
-              </div>
-            </div>
+  <div class="row">
+      <div class="col-xs-11">
+        <div class="sort-container button-date">
+          <div class="calendar-icon">
+            <div class="nav-action-label">Date</div>
+            <%= image_tag "calendar.png" %>
           </div>
         </div>
+        <div class="sort-container button-priority">
+          <div class="priority-icon">
+            <div class="nav-action-label">Priority</div>
+            <%= image_tag "priority.png" %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div id="mountTaskListComponent" class="container"></div>
+    <div id="mountTaskListComponent" class="container"></div>
 </div>
 
 <!-- PAGE WRAP -->
